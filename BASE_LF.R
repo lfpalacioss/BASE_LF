@@ -18,13 +18,33 @@ LIBRERIA=c(paste("C:/Users/",USER,"/Google Drive/4) R/3) Library",sep = ""))
 .libPaths(LIBRERIA)
 .libPaths(.libPaths()[1])
 
+
+#DEFINIR LOS SUBPAQUETES
+pack_textos = c("shadowtext", "mgsub")
+pack_graficos = c("ggridges", "fmsb", "networkD3", "formattable", "packcircles", 
+                  "gganimate", "webshot")
+pack_mapas = c("mapproj", "sf")
+pack_dashboards = c("plotly", "flexdashboard")
+pack_tidy = c("tidyverse")
+pack_datas = c("xts", "zoo", "safer", "reshape2", "lubridate", "scales")  
+pack_conexion = c("data.table", "openxlsx", "WriteXLS", "Rserve", 
+                  "rsconnect", "googlesheets4", "foreign", "readxl")
+pack_analisis = c("plm", "lmtest", "forecast", "vars")
+
+
+#UNIR SUBPAQUETES
+pqt<- c(pack_textos,
+        pack_graficos, 
+        pack_mapas,
+        pack_dashboards,
+        pack_tidy,
+        pack_datas,
+        pack_conexion,
+        pack_analisis)
+
+
 #ACTIVAR LOS PAQUETES SIGUIENTES
 library(easypackages)
-pqt<- c("networkD3","data.table","plyr","formattable","fmsb","ggridges","doBy","xts","zoo","mgsub","sf","tidyr",
-        "tidyverse","readxl","WriteXLS", "openxlsx", "Rserve", "reshape2", "stringr","foreign","ggplot2","rsconnect",
-        "forcats","mapproj","forecast","lmtest","vars","packcircles","scales","safer","gganimate","lubridate",#"rgdal",
-        "googlesheets4","plm","webshot","googlesheets4","shadowtext","ggpubr","plotly","flexdashboard") 
-
 libraries(pqt)
 
 #install.packages(pqt, lib=LIBRERIA)
